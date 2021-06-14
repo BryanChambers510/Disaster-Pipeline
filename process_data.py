@@ -2,6 +2,7 @@ import sys
 import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
+import os
 
 
 def load_data(messages_filepath, categories_filepath):
@@ -22,14 +23,14 @@ def load_data(messages_filepath, categories_filepath):
     categories = pd.read_csv(categories_filepath)
     
     #Merge datasets
-    df = messages.merge(categories, how = 'left', on = ['id'])
+    df = pd.merge(messages, categories, left_on='id', right_on = 'id')
     
     return df
 
 
 
 def clean_data(df):
-     """Clean dataframe by removing duplicates & converting categories from strings 
+    """Clean dataframe by removing duplicates & converting categories from strings 
     to binary values.
     
     Args:
@@ -38,7 +39,7 @@ def clean_data(df):
     Returns:
     df: dataframe. Dataframe containing cleaned version of input dataframe.
     """
-     #create a df for each indiviual category 
+     #create a column for each indiviual category 
     categories = df['categories'].str.split(';', expand = True)
     #select first row
     row = categories.iloc[0]
@@ -79,12 +80,11 @@ def save_data(df, database_filename):
     outputs:
     None
     """
-    engine = create_engine('sqlite:///' + database_filename)
-    df.to_sql('Messages', engine, index=False, if_exists='replace')
-    engine = create_engine('sqlite:///' + database_filename)
-    df.to_sql('Messages', engine, index=False, if_exists='replace')
+    engine = create_engine('sqlite:///{}'.format(database_filename))
+    table_name = database_filename.replace(".db","") + "_table"
+    df.to_sql(table_name, engine, index=False, if_exists='replace')
 
-
+    
 def main():
     if len(sys.argv) == 4:
 
