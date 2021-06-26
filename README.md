@@ -63,5 +63,6 @@ train_classifier.py - takes the processed dataframe and tokenizes the messages t
 # Acknowledgements
 
 Thank you to Udacity for mentorship during the project and FigureEight for sharing their dataset
-Thank you to Salez Z. Atwah, I reference his repository https://github.com/atwahsz/Disaster-Response-Pipeline at it demonstrated a very pretty way to present score results using color coded syntax. 
+
+Thank you to Salez Z. Atwah, I reference his repository https://github.com/atwahsz/Disaster-Response-Pipeline as it demonstrated a very pretty way to present score results using color coded syntax. 
 
