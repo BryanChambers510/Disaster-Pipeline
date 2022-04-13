@@ -34,9 +34,9 @@ run.py - creates visualizations of the messages data
 
 In the 'data' folder:
 
-disaster_messages.csv - contains data of all the messages to be analyzed by the machine learning model
+disaster_messages.csv - contains data of all the messages to be analyzed by the machine learning model.
 categories_messages.csv - contains data of all the categories of the messages to be analyzed by the 
-machine learning model
+machine learning model.
 process_data.py - contains the code for all of the data preprocessing of the data sets before being 
 input in to the machine learning pipeline
 
