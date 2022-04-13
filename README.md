@@ -35,12 +35,15 @@ run.py - creates visualizations of the messages data
 In the 'data' folder:
 
 disaster_messages.csv - contains data of all the messages to be analyzed by the machine learning model
-categories_messages.csv - contains data of all the categories of the messages to be analyzed by the machine learning model
-process_data.py - contains the code for all of the data preprocessing of the data sets before being input in to the machine learning pipeline
+categories_messages.csv - contains data of all the categories of the messages to be analyzed by the 
+machine learning model
+process_data.py - contains the code for all of the data preprocessing of the data sets before being 
+input in to the machine learning pipeline
 
 In the 'models' folder:
 
-train_classifier.py - takes the processed dataframe and tokenizes the messages then trains a classifier with a pipeline and does statistical analysis on it to test the performance of the NLP classifier
+train_classifier.py - takes the processed dataframe and tokenizes the messages then trains a classifier with a 
+pipeline and does statistical analysis on it to test the performance of the NLP classifier
 
 # Execution of the Program
 
